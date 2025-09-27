@@ -239,7 +239,7 @@ export default class Home extends Component {
               categoryYangDipilih={categoryYangDipilih} 
             />
             <Col className='mt-3'>
-              <h4><strong>Daftar Produk - {categoryYangDipilih}</strong></h4>
+              <h4><strong>Daftar Menu - {categoryYangDipilih}</strong></h4>
               <hr />
               <Row className='overflow-auto menu'>
                 {menus && menus.length > 0 ? (
