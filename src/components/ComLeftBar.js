@@ -1,14 +1,14 @@
 import axios from 'axios'
 import { Component } from 'react'
 import { Col, ListGroup } from 'react-bootstrap'
+import { API_URL } from '../utils/constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils, faCoffee, faCheese } from '@fortawesome/free-solid-svg-icons'
 
 const Icon = ({ nama }) => {
     if (nama === "Makanan") return <FontAwesomeIcon icon={faUtensils} className="mr-2" />
     if (nama === "Minuman") return <FontAwesomeIcon icon={faCoffee} className="mr-2" />
-    if (nama === "Camilan") return <FontAwesomeIcon icon={faCheese} className="mr-2" />
-    return null;
+    if (nama === "Cemilan") return <FontAwesomeIcon icon={faCheese} className="mr-2" />
 }
 
 
@@ -22,19 +22,18 @@ export default class ComLeftBar extends Component {
     }
 
     componentDidMount() {
-        const url = "https://backend-production-49fd.up.railway.app/categorylist";
         axios
-            .get(url) 
+             .get('/data/db.json') //.get(API_URL + "categories")
             .then(res => {
-                // alert("categorylist")
-                // alert(JSON.stringify(res.data))
-                const categories = res.data;
+                // console.log("Response: ", res);
+                const categories = res.data.categories;
                 this.setState({ categories });
             })
 
             // handle success
             .catch(error => {
-                alert("Error get data category dari API")
+                //console.log("Error YA");
+                console.log("Error dari API, menggunakan mock data");
             })
     }
 
@@ -50,13 +49,13 @@ export default class ComLeftBar extends Component {
                 <hr />
                 <ListGroup as="ul">
                     {categories && categories.map((category) => (
-                        <ListGroup.Item as="li" key={category.CatID} 
-                        onClick={() =>{changeCategory(category.Nama)}}
+                        <ListGroup.Item as="li" key={category.id} 
+                        onClick={() =>changeCategory(category.nama)}
                         className={categoryYangDipilih === category.nama && "category-aktif"}
                         style={{cursor:'pointer'}}
                         >
                             <h5>
-                                <Icon nama={category.Nama} /> {category.Nama}
+                                <Icon nama={category.nama} /> {category.nama}
                             </h5>
                         </ListGroup.Item>
                     ))}
