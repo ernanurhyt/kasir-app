@@ -8,7 +8,7 @@ export default class Sukses extends Component {
 
     componentDidMount(){
         axios
-        .get("http://localhost:3000" + "/keranjangs")
+        .get("https://backend-production-49fd.up.railway.app" + "/keranjangs")
         .then(res => {
           // console.log("Response: ", res);
           const keranjangs = res.data;
