@@ -10,7 +10,7 @@ const Menus = ({ menu, masukKeranjang }) => {
         {/* {"category"+menu.category.nama.toLowerCase()}
         {"gambar"+menu.gambar} */}
         {/* <Card.Img variant="top" src={"assets/images/"+menu.category.nama.toLowerCase()+"/"+menu.gambar} /> */}
-        <Card.Img variant="top" src={"assets/images/"+menu.Category.toLowerCase()+"/"+menu.Path_gambar} width="300" height="200"/>
+        <Card.Img variant="top" src={"assets/images/"+menu.Category.toLowerCase()+"/"+menu.Path_gambar} width="300" height="195"/>
         {/* <Card.Img variant="top" src={"assets/images/"+menu.category.nama.toLowerCase()+"/"+menu.gambar} style={{width: '300px', height: 'auto', maxWidth: '100%' }}/> */}
         <Card.Body>
           {/* <Card.Title>{menu.nama}<b>({menu.kode})</b></Card.Title> */}
@@ -23,5 +23,6 @@ const Menus = ({ menu, masukKeranjang }) => {
     </Col>
   )
 }
+
 
 export default Menus
