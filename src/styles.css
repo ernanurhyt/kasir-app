@@ -1,0 +1,59 @@
+/* css for Loginform.js */
+.error {
+    color: red;
+    font-size: 13px;
+    font-style: italic;
+}
+.wrapper{
+	/* background: url(bg1.jpg) no-repeat; */
+    background-color:  rgb(201, 101, 0);
+	background-size: cover;
+	height: 70vh;
+}
+.wrapper .center{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: sans-serif;
+	user-select: none;
+}
+.center h1{
+	color: white;
+	font-size: 50px;
+	width: 1130px;
+	font-weight: bold;
+	text-align: center;
+}
+/* .center h2{
+	color: white;
+	font-size: 70px;
+	font-weight: bold;
+	margin-top: 10px;
+	width: 885px;
+	text-align: center;
+} */
+.center .buttons{
+	margin: 35px 400px;
+}
+.buttons button{
+	height: 50px;
+	width: 150px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #920000;
+	background: rgb(242, 156, 18);
+	outline: none;
+	cursor: pointer;
+	border: 1px solid #920000;
+	border-radius: 25px;
+	transition: .4s;
+}
+.buttons .btn2{
+	margin-left: 25px;
+}
+.buttons button:hover{
+	background: rgb(180, 92, 3) ;
+}
+
+
