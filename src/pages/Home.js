@@ -6,36 +6,6 @@ import { ComLeftBar, ComRightBar, ComListOrderBar, Menus } from '../components/I
 import axios from 'axios'
 import { AuthContext } from '../authentication/AuthContext';
 
-// // IMPORT GAMBAR LOKAL
-// import nasiGoreng from '../assets/images/nasi-goreng.jpg';
-// import mieGoreng from '../assets/images/mie-goreng.jpg';
-// import esTeh from '../assets/images/es-teh.jpg';
-// import kopiHitam from '../assets/images/kopi-hitam.jpg';
-// import keripikKentang from '../assets/images/keripik-kentang.jpg';
-
-// MOCK DATA UNTUK TESTING
-
-// const [dbmenu, setMenu] = useState([]);
-// const [loading, setLoading] = useState(true);
-// const [error, setError] = useState(null);
-// useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await axios.get('/data/db.json');
-//         setMenu(response.data.menu);
-//         setLoading(false);
-//         alert(response.data.menu)
-//       } catch (err) {
-//         setError(err.message);
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchData();
-//   }, []);
-
-// const user = localStorage.getItem('user');
-
 
 export default class Home extends Component {
   constructor(props) {
