@@ -145,7 +145,7 @@ const renderForm = (
         // <div style={{textAlign:'center'}}>
        <div class="wrapper">
         <div class="center">
-            <h1>Please Login Hai</h1>
+            <h1>Please LoginHai</h1>
             {/* <Button onClick={functionopenpopup} color="primary" variant="contained">login</Button> */}
             <div className="buttons"> 
                 <Button onClick={functionopenpopup1} id="button1" value="cashier" >CASHIER</Button>
@@ -174,6 +174,7 @@ const renderForm = (
 // }
 
 export default Loginform;
+
 
 
 
