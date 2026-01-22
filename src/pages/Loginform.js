@@ -143,7 +143,7 @@ const renderForm = (
 
     return (
         // <div style={{textAlign:'center'}}>
-        <div class="wrapper">
+       // <div class="wrapper">
         <div class="center">
             <h1>Please Login</h1>
             {/* <Button onClick={functionopenpopup} color="primary" variant="contained">login</Button> */}
@@ -168,10 +168,11 @@ const renderForm = (
                 </DialogActions>
             </Dialog>
         </div>
-        </div>
+       // </div>
     )
   }
 // }
 
 export default Loginform;
+
 
