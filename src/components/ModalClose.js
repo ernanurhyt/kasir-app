@@ -469,15 +469,11 @@ const ModalClose = ({
                             /> */}
                             
                             <p></p><p></p>
-                            {/* <h5> */}
-                                <input required value={Verify} onChange={(e) => setVerify(e.target.value)}  type="password" style={{ fontSize: '20px', }} placeholder="Isi password verifikasi"></input>
-                            {/* </h5> */}
-                            
-                            {/* <button style={{ width: '11.2cm' }} >Submit Transaksi</button>  */}
-                            <Button variant="outline-primary" onClick={() => {SubmitTransaksi()}} ><h5><b> Submit Transaksi </b></h5></Button>
-                            {/* <button onClick={() => {this.hapusPesanan(menuKeranjang.product.id); window.location.reload();}}>
-                            Hapus
-                            </button> */}                            
+                                
+                            {/* <input required value={Verify} onChange={(e) => setVerify(e.target.value)}  type="password" style={{ fontSize: '20px', }} placeholder="Isi password verifikasi"></input> */}
+                            {/* <Button variant="outline-primary" onClick={() => {SubmitTransaksi()}} ><h5><b> Submit Transaksi </b></h5></Button> */}
+                            <Button variant="outline-primary" onClick={() => {SaveTransaksi()}} ><h5><b> Submit Transaksi </b></h5></Button>
+                                                       
                     </Row>
                 </Modal.Body>
             {/* </Form> */}
@@ -504,3 +500,4 @@ const ModalClose = ({
 }
 
 export default ModalClose
+
