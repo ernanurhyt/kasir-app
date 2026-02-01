@@ -63,11 +63,18 @@ const Loginform = () => {
           <form onSubmit={handleSubmit}>
             {error && <div className="error">{error}</div>}
           <Stack spacing={2} margin={2}>    {/*  myfootstep    */}
-              {/* textfield for manual input >>*/}  {/* <TextField variant="outlined" label="UserName" input type="text" name="uname" required></TextField> */}
-              {/* textfield for auto input >>*/} <TextField variant="outlined" label="UserName" input type="text" value={valusername} name="uname" required></TextField> 
+              {/* textfield for manual input >>*/}  
+              <TextField variant="outlined" label="UserName" input type="text" name="uname" required></TextField>
+              {renderErrorMessage("uname")}
+              <TextField variant="outlined" label="Password" input type="password" name="pass" required></TextField>
+              {renderErrorMessage("pass")}
+
+              {/* textfield for auto input >>*/} 
+              {/* <TextField variant="outlined" label="UserName" input type="text" value={valusername} name="uname" required></TextField> 
               {renderErrorMessage("uname")}
               <TextField variant="outlined" label="Password" input type="password" name="pass" required ></TextField>
-              {renderErrorMessage("pass")}
+              {renderErrorMessage("pass")} */}
+
               {/* <Button color="primary" input type="submit" variant="contained">OK</Button> */}
               <button color="primary" input type="submit" variant="contained" disabled={loading}>
                 {loading ? 'Logging in...' : 'Login'}
@@ -103,8 +110,12 @@ const Loginform = () => {
             <h1>Please Login</h1> 
             {/* <Button onClick={functionopenpopup} color="primary" variant="contained">login</Button> */}
             <div className="buttons"> 
-                <Button onClick={functionopenpopup1} id="button1" value="cashier" >CASHIER</Button>
-                <Button onClick={functionopenpopup2} id="button2" value="customer" class="btn2" >CUSTOMER</Button>
+                {/* for auto input >> */}
+              {/* <Button onClick={functionopenpopup1} id="button1" value="cashier" >CASHIER</Button>
+              <Button onClick={functionopenpopup2} id="button2" value="customer" class="btn2" >CUSTOMER</Button> */}
+              
+              {/* for manual input >> */}
+              <Button onClick={functionopenpopup} >LOGIN TO CASHIER / CUSTOMER</Button>
             </div>
             
             <Dialog
@@ -129,4 +140,5 @@ const Loginform = () => {
 }
 
 export default Loginform;
+
 
