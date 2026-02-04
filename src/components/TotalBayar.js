@@ -16,7 +16,7 @@ export default class TotalBayar extends Component {
                 menus: this.props.keranjangs
             }
             // alert("total bayar save to database")
-            alert(JSON.stringify(pesanan))
+            // alert(JSON.stringify(pesanan))
              //SEND TO DB SUPABASE
             const url = "https://backend-production-49fd.up.railway.app/saveorder"
             axios
@@ -73,4 +73,5 @@ export default class TotalBayar extends Component {
         )
     }
 }
+
 
