@@ -231,8 +231,9 @@ export default class ComRightBar extends Component {
   handleNamaPemesanChange = (e) => {
     this.setState({
       namapemesan: e.target.value
+    })
   };
-
+  
   render() {
     const { keranjangs } = this.props;
     const { namapemesan } = this.state;
@@ -354,6 +355,7 @@ export default class ComRightBar extends Component {
     );
   }
 }
+
 
 
 
