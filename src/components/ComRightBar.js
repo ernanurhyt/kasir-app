@@ -232,7 +232,7 @@ export default class ComRightBar extends Component {
     this.setState({
       namapemesan: e.target.value
     })
-  };
+  }; 
   
   render() {
     const { keranjangs } = this.props;
@@ -355,6 +355,7 @@ export default class ComRightBar extends Component {
     );
   }
 }
+
 
 
 
