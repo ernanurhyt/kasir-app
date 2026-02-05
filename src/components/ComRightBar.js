@@ -211,8 +211,13 @@ export default class ComRightBar extends Component {
     window.location.reload();
   };
 
-  hapusPesanan = (productId) => {
-    this.handleClose();
+  hapusPesanan = (productId,event) => {
+    // Hentikan event bubbling
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    // 
     const keranjang = JSON.parse(localStorage.getItem('keranjang') || '[]');
 
     // Cari index item berdasarkan product ID
@@ -221,11 +226,13 @@ export default class ComRightBar extends Component {
     if (index !== -1) {
       keranjang.splice(index, 1);
       localStorage.setItem('keranjang', JSON.stringify(keranjang));
-      // alert(`Item dengan ID ${productId} berhasil dihapus`);
+      // alert(`Item dengan ID ${productId} berhasil dihapus`);      
+      if (this.props.getListKeranjang) {
+        this.props.getListKeranjang(); // Panggil fungsi untuk update data      
+      }
     } else {
       alert('Item tidak ditemukan');
     }
-    window.location.reload()
   };
 
   handleNamaPemesanChange = (e) => {
@@ -307,7 +314,7 @@ export default class ComRightBar extends Component {
                     </Col>
                     <Col xs="2">
                       <h5>
-                        <button onClick={() => {this.hapusPesanan(menuKeranjang.product.MenuID); window.location.reload();}}>
+                        <button onClick={(e) => {this.hapusPesanan(menuKeranjang.product.MenuID, e);}}>
                           Hapus
                         </button>
                       </h5>
@@ -355,6 +362,7 @@ export default class ComRightBar extends Component {
     );
   }
 }
+
 
 
 
