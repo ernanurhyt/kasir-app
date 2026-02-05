@@ -5,7 +5,7 @@ import { Button, Form, Modal, Col, Row  } from 'react-bootstrap'
 import { numberWithCommas } from '../utils/utils'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-
+  
 const ModalClose = ({
     showModal,
     orderTrans,
@@ -83,7 +83,7 @@ const ModalClose = ({
         .put(url, dataordertrans)
         .then((res) => {
             // alert("Update berhasil:", res.data);
-            // this.props.history.push('/sukses'); 
+            // this.props.history.push('/sukses'); erna12345
             // handleClose();
             handleSubmit();
         })
@@ -114,37 +114,41 @@ const ModalClose = ({
     }
 
     const SaveTransaksi = () => {
-        const dataordertrans = {
-            id: orderTrans.id,
-            Tglclose: new Date().toISOString(),
-            Pembayaranqris: nominalqris,
-            Pembayarancash: parseFloat(uangDibayar) - parseFloat(nominalqris) + parseFloat(selisihuang),
-            Total_bayar: totalBayar,
-            Status_paid: true
-        };
-        // alert("Pembayaranqris:" + nominalqris);
-        // alert("Pembayarancash:" + (parseFloat(uangDibayar) - parseFloat(nominalqris) + parseFloat(selisihuang)));
-        // alert("Total_bayar:" + totalBayar)
-        
-        const url = "https://backend-production-49fd.up.railway.app/ordertransaksi";
-        axios
-        .put(url, dataordertrans)
-        .then((res) => {
-            // alert("Update berhasil:", res.data);
-            // this.props.history.push('/sukses');
-            //  handleClose(orderTrans.id)
-            handleSubmit();
-        })
-        .catch((error) => {
-            console.error("Error:", error.response?.data || error.message);
-        });
+        if (selisihuang > 0) {
+            alert("Pastikan Total Dibayarkan sesuai!");
+            return; // Berhenti di sini, tidak lanjut ke verifikasi
+        }
+            const dataordertrans = {
+                id: orderTrans.id,
+                Tglclose: new Date().toISOString(),
+                Pembayaranqris: nominalqris,
+                Pembayarancash: parseFloat(uangDibayar) - parseFloat(nominalqris) + parseFloat(selisihuang),
+                Total_bayar: totalBayar,
+                Status_paid: true
+            };
+            // alert("Pembayaranqris:" + nominalqris);
+            // alert("Pembayarancash:" + (parseFloat(uangDibayar) - parseFloat(nominalqris) + parseFloat(selisihuang)));
+            // alert("Total_bayar:" + totalBayar)
+            
+            const url = "https://backend-production-49fd.up.railway.app/ordertransaksi";
+            axios
+            .put(url, dataordertrans)
+            .then((res) => {
+                // alert("Update berhasil:", res.data);
+                // this.props.history.push('/sukses');
+                //  handleClose(orderTrans.id)
+                handleSubmit();
+            })
+            .catch((error) => {
+                console.error("Error:", error.response?.data || error.message);
+            });
 
-        // // Reset form setelah submit
-        // setNominalCash(0)
-        // setNominalQRIS(0)
-        // setUseCash(false)
-        // setUseQRIS(false)
-        // handleClose()
+            // // Reset form setelah submit
+            // setNominalCash(0)
+            // setNominalQRIS(0)
+            // setUseCash(false)
+            // setUseQRIS(false)
+            // handleClose()
     }
 
     if (orderTrans) {
@@ -172,8 +176,9 @@ const ModalClose = ({
                                 variant="outline-primary"
                                 size="lg"
                                 className="w-100 py-3"
+                                disabled={orderTrans.Status_serve === true}
                             >
-                                <h5 className="mb-0"><b>✓ Pesanan sudah disiapkan</b></h5>
+                                <h5 className="mb-0"><b>✓ Pesanan sudah disiapkan </b></h5>
                             </Button>
                         </Col>
                     </Row>
@@ -206,6 +211,7 @@ const ModalClose = ({
                                     fontWeight: 'bold'
                                 }}
                                 onClick={() => { handleNominal(orderTrans.Total_bayar) }}
+                                disabled={useQRIS === false && useCash === false}
                             >
                                 <span>Rp.</span>
                                 <span>{numberWithCommas(orderTrans.Total_bayar)}</span>
@@ -469,11 +475,19 @@ const ModalClose = ({
                             /> */}
                             
                             <p></p><p></p>
-                                
-                            {/* <input required value={Verify} onChange={(e) => setVerify(e.target.value)}  type="password" style={{ fontSize: '20px', }} placeholder="Isi password verifikasi"></input> */}
+                            
+                                {/* <input required value={Verify} onChange={(e) => setVerify(e.target.value)}  type="password" style={{ fontSize: '20px', }} placeholder="Isi password verifikasi"></input> */}
                             {/* <Button variant="outline-primary" onClick={() => {SubmitTransaksi()}} ><h5><b> Submit Transaksi </b></h5></Button> */}
-                            <Button variant="outline-primary" onClick={() => {SaveTransaksi()}} ><h5><b> Submit Transaksi </b></h5></Button>
-                                                       
+                            <Button variant="outline-primary" 
+                                onClick={() => {
+                                    const isConfirmed = window.confirm("Apakah pelanggan akan melakukan pembayaran?");
+                                    if (isConfirmed) {
+                                        SaveTransaksi();
+                                    }
+                                }}
+                                disabled={orderTrans.Status_paid === true}
+                            ><h5><b> Submit Transaksi </b></h5></Button>
+                                                        
                     </Row>
                 </Modal.Body>
             {/* </Form> */}
@@ -500,5 +514,4 @@ const ModalClose = ({
 }
 
 export default ModalClose
-
-
+  
