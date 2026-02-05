@@ -82,8 +82,8 @@ const ModalClose = ({
         axios
         .put(url, dataordertrans)
         .then((res) => {
-            alert("Update berhasil:", res.data);
-            // this.props.history.push('/sukses'); erna12345
+            // alert("Update berhasil:", res.data);
+            // this.props.history.push('/sukses'); 
             // handleClose();
             handleSubmit();
         })
@@ -130,7 +130,7 @@ const ModalClose = ({
         axios
         .put(url, dataordertrans)
         .then((res) => {
-            alert("Update berhasil:", res.data);
+            // alert("Update berhasil:", res.data);
             // this.props.history.push('/sukses');
             //  handleClose(orderTrans.id)
             handleSubmit();
@@ -500,4 +500,5 @@ const ModalClose = ({
 }
 
 export default ModalClose
+
 
