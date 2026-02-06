@@ -177,7 +177,12 @@ export default class ComRightBar extends Component {
   };
 
   handleSubmit = (event) => {
-    event.preventDefault(); //biar gk ke reload
+    //event.preventDefault(); //biar gk ke reload
+    // Hentikan event bubbling
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
     this.handleClose();
 
     const data = {
@@ -362,6 +367,7 @@ export default class ComRightBar extends Component {
     );
   }
 }
+
 
 
 
