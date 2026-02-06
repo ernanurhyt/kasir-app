@@ -137,14 +137,15 @@ const ModalKeranjang = ({
                     </Form>
 
                 </Modal.Body>
-             {/* 
+                 {/* 
                 <Modal.Footer>
                     <Button variant="danger" onClick={() => hapusPesanan(keranjangDetail.product.MenuID)} >
                         <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
                     </Button>
                 </Modal.Footer>
+                */}
             </Modal>  
-            */}
+            
         )
     } else {
         return (
