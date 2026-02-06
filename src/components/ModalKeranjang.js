@@ -132,17 +132,19 @@ const ModalKeranjang = ({
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
-                            Simpan
+                            OKE
                         </Button>
                     </Form>
 
                 </Modal.Body>
+             {/* 
                 <Modal.Footer>
                     <Button variant="danger" onClick={() => hapusPesanan(keranjangDetail.product.MenuID)} >
                         <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
                     </Button>
                 </Modal.Footer>
-            </Modal>
+            </Modal>  
+            */}
         )
     } else {
         return (
@@ -165,3 +167,4 @@ const ModalKeranjang = ({
 }
 
 export default ModalKeranjang
+
