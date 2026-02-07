@@ -291,7 +291,7 @@ export default class ComListOrderBar extends Component {
                   <div>
                   {auth.user && (
                     <div>
-                    {auth.user.username === "cashier" ? (
+                    {auth.user.is_staff === true ? (
                         <ModalClose
                           handleClose={this.handleClose}
                           {...this.state}
@@ -319,4 +319,5 @@ export default class ComListOrderBar extends Component {
     );
   }
 }
+
 
