@@ -258,7 +258,7 @@ export default class Home extends Component {
                       </Row>
                     </Container>
 
-                  ) : auth.user.username === "cashier" ? ( 
+                  ) : auth.user.is_staff === true ? ( 
                     <ComListOrderBar 
                       {...this.props} 
                       getNewOrder={this.getNewOrder}           
@@ -275,4 +275,5 @@ export default class Home extends Component {
     </div>
     )
   }
+
 }
