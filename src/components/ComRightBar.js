@@ -213,7 +213,7 @@ export default class ComRightBar extends Component {
     // Simpan kembali ke localStorage
     localStorage.setItem('keranjang', JSON.stringify(existingCart));
 
-    // window.location.reload();
+    this.props.getListKeranjang(); // Panggil fungsi untuk update data
   };
 
   hapusPesanan = (productId,event) => {
@@ -367,6 +367,7 @@ export default class ComRightBar extends Component {
     );
   }
 }
+
 
 
 
