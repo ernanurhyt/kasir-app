@@ -210,7 +210,7 @@ export default class ComListOrderBar extends Component {
                   {/* {(itemtrans.Pesanan)} */}
                   
                   <Row style={{backgroundColor: 'lightgrey', padding: '1px'}}>
-                    <Col xs="1">
+                    <Col xs="2">
                       <h5>
                         <Badge pill variant="success">
                           {itemtrans.No_antri.substring(itemtrans.No_antri.indexOf('_') + 1)}
@@ -220,7 +220,7 @@ export default class ComListOrderBar extends Component {
                   {/* </Row>
                   
                   <Row style={{backgroundColor: 'lightgrey', padding: '1px'}}> */}
-                    <Col xs="6">
+                    <Col xs="5">
                       <h5>
                         <Badge pill variant="success">
                           {itemtrans.Pemesan}
@@ -319,3 +319,4 @@ export default class ComListOrderBar extends Component {
     );
   }
 }
+
