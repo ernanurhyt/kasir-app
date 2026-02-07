@@ -194,7 +194,7 @@ export default class Home extends Component {
                     <button onClick={auth.logout}> Logout </button>
                   </div>
                   <h4 className="fw-bold">FORM ORDER</h4>
-                  {auth.user.username === "customer" ? ( 
+                  {auth.user.is_staff === false ? (
                     <Container fluid>
                       <Row >
                         {/* DISABLE SEMENTARA */}
@@ -277,3 +277,4 @@ export default class Home extends Component {
   }
 
 }
+
