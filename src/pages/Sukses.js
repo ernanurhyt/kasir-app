@@ -8,7 +8,7 @@ export default class Sukses extends Component {
 
     componentDidMount(){
         axios
-        .get("https://web-production-80a65.up.railway.app" + "/keranjangs")
+        .get("https://web-production-80a65.up.railway.app/keranjangs")
         .then(res => {
           // console.log("Response: ", res);
           const keranjangs = res.data;
@@ -37,3 +37,4 @@ export default class Sukses extends Component {
     )
   }
 }
+
