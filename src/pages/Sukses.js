@@ -6,9 +6,8 @@ import { API_URL } from '../utils/constants';
 
 export default class Sukses extends Component {
     componentDidMount(){
-        const API_URL = "https://web-production-80a65.up.railway.app"
         axios
-        .get(API_URL + "/keranjangs")
+        .get("https://web-production-80a65.up.railway.app/keranjangs")
         .then(res => {
           // console.log("Response: ", res);
           const keranjangs = res.data;
@@ -37,3 +36,4 @@ export default class Sukses extends Component {
     )
   }
 }
+
