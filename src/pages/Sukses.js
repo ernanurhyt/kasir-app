@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { API_URL } from '../utils/constants';
 
 export default class Sukses extends Component {
-    const API_URL = "https://web-production-80a65.up.railway.app";
     componentDidMount(){
+        const API_URL = "https://web-production-80a65.up.railway.app"
         axios
         .get(API_URL + "/keranjangs")
         .then(res => {
@@ -37,5 +37,6 @@ export default class Sukses extends Component {
     )
   }
 }
+
 
 
