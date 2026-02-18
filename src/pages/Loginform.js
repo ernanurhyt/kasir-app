@@ -115,7 +115,7 @@ const Loginform = () => {
               <Button onClick={functionopenpopup2} id="button2" value="customer" class="btn2" >CUSTOMER</Button> */}
               
               {/* for manual input >> */}
-              <Button onClick={functionopenpopup} >LOGIN TO CASHIER / CUSTOMER</Button>
+              <Button onClick={functionopenpopup} >LOGIN</Button>
             </div>
             
             <Dialog
@@ -140,4 +140,5 @@ const Loginform = () => {
 }
 
 export default Loginform;
+
 
