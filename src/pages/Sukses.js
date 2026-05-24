@@ -7,7 +7,7 @@ import { API_URL } from '../utils/constants';
 export default class Sukses extends Component {
     componentDidMount(){
         axios
-        .get("https://web-production-80a65.up.railway.app/keranjangs")
+        .get("http://localhost:8000")
         .then(res => {
           // console.log("Response: ", res);
           const keranjangs = res.data;
